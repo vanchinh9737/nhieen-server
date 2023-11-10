@@ -13,9 +13,8 @@ import java.time.LocalDate;
 @Setter
 @Getter
 public class CarUpdateForm {
-
-    @NotBlank
-    @Length(max = 100)
+    @NotBlank(message = "{car.licensePlate.NotBlank.message}")
+    @Length(max = 100,message = "{car.licensePlate.Length.message}")
     private String LicensePlate;
 
     @NotNull
