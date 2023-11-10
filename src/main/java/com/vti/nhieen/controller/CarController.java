@@ -28,9 +28,7 @@ public class CarController {
     public CarDto create(@RequestBody @Valid CarCreateForm form) {
         //    @Valid kiem tra tinh hop le cua form roi bat loi gui ve xu ly
         return carService.create(form);
-
     }
-
     @GetMapping("/api/v1/cars")
     public Page<CarDto> findAll(Pageable page) {
         return carService.findAll(page);

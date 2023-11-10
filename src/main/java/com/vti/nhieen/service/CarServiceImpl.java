@@ -29,22 +29,13 @@ public class CarServiceImpl implements CarService {
         car.setPk(pk);
 
         var savedCar = carRepository.save(car);
-
         return modelMapper.map(savedCar, CarDto.class);
-
-
     }
-
-
     @Override
     public Page<CarDto> findAll(Pageable page) {
         return carRepository.findAll(page)
                 .map(car -> modelMapper.map(car, CarDto.class));
-
     }
-
-
-
     @Override
     public CarDto update(CarUpdateForm form) {
 
